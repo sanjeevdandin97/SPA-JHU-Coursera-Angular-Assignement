@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <title>Shopping List Check Off</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="stylesheet" href="vendor/styles/bootstrap.min.css">
+      <link rel="stylesheet" href="css/index.css">
+
+      <script type="text/javascript" src="vendor/angular-1.8.2/angular.min.js"></script>
+   </head>
+   <body ng-app='Assignment2App'>
+      <div class="container">
+         <h1>Shopping List Check Off</h1>
+         <div class="row">
+            <!-- To Buy List -->
+            <div class="col-md-6" ng-controller='ToBuyController as showToBuyList'>
+               <h2>To Buy:</h2>
+               <ol>
+                  <li ng-repeat="item in showToBuyList.showToBuyListData">
+                    Buy {{ item.quantity }} {{ item.name }}
+                    <button class="btn btn-default" ng-click='showToBuyList.popnpushItems($index, item.name, item.quantity);'><span class="glyphicon glyphicon-ok"></span> Bought</button>
+                  </li>
+               </ol>
+               <div ng-show="showToBuyList.buyListError[0]" class="emptyMessage" >Everything is bought!"</div>
+            </div>
+            <!-- Already Bought List -->
+            <div class="col-md-6" ng-controller='BoughtController as showBoughtList'>
+               <h2>Already Bought:</h2>
+               <ol>
+                  <li ng-repeat="item in showBoughtList.showBoughtListData">
+                    Buy {{ item.quantity }} {{ item.name }}
+                  </li>
+               </ol>
+               <div ng-show='showBoughtList.boughtListError[0]' class="emptyMessage">Nothing bought yet.</div>
+            </div>
+         </div>
+      </div>
+   </body>
+   <script type="text/javascript" src="js/index.js"></script>
+</html>
