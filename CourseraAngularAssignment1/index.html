@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link type="text/css" rel="stylesheet" href="index.css" />
+    <!-- <script type="text/javascript" src="angular.min.js"></script> -->
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"
+    ></script>
+    <script type="text/javascript" src="app.js"></script>
+    <title>Coursera AngularJs Assignment 1</title>
+  </head>
+  <body ng-app="AssignmentApp">
+    <h1>Coursera AngularJs Assignment 1</h1>
+    <div ng-controller="AssignmentController">
+      <div>
+        <label>Enter Food Items:</label>
+      </div>
+      <div>
+        <input type="text" ng-model="noOfItems" />
+        <label class="{{outputClassColor}}">{{output}}</label>
+      </div>
+      <div>
+        <input
+          type="button"
+          value="Check if Too Much"
+          ng-click="getNoOfItems()"
+        />
+      </div>
+      <div>
+        Reference Link for Above UI:
+        <a
+          href="https://github.com/jhu-ep-coursera/fullstack-course5/blob/master/assignments/assignment1/Assignment-1.md"
+          >Coursera Single Page Web Applications with AngularJS Module 1 Coding
+          Assignment</a
+        >
+      </div>
+    </div>
+  </body>
+</html>
